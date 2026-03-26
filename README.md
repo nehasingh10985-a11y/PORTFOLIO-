@@ -80,7 +80,7 @@ npm i -g vercel
 vercel
 ```
 
-Or push to GitHub and import the repo at [vercel.com](https://portfolio-tau-five-45.vercel.app).
+Or push to GitHub and import the repo at [vercel.com](https://portfolio-tau-five-45.vercel.app/).
 
 ---
 
