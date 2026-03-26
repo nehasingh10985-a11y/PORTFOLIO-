@@ -25,7 +25,6 @@ neha-portfolio/
         ├── Reveal.jsx        ← Fade-up animation wrapper
         ├── Navbar.jsx        ← Responsive nav + mobile hamburger
         ├── Hero.jsx          ← Landing section + typewriter + stats
-        ├── Ticker.jsx        ← Infinite scrolling skill marquee
         ├── Journey.jsx       ← Frontend → Backend → Full-Stack cards
         ├── Projects.jsx      ← Spotlight hover project list
         ├── SkillBar.jsx      ← Animated thin skill bar
@@ -64,7 +63,6 @@ All your personal content is in **`src/data.js`** — just edit that file:
 | Projects          | `PROJECTS`                          |
 | Skill bars        | `FRONTEND_SKILLS`, `BACKEND_SKILLS` |
 | Tools grid        | `TOOLS`                             |
-| Ticker items      | `TICKER`                            |
 | Education         | `EDUCATION`                         |
 | Work experience   | `EXPERIENCE`                        |
 
@@ -88,7 +86,6 @@ Or push to GitHub and import the repo at [vercel.com](https://portfolio-tau-five
 
 - Fully responsive (mobile, tablet, desktop)
 - Mobile hamburger menu
-- Infinite marquee skill ticker
 - Typewriter hero animation
 - Scroll-triggered fade-up animations
 - Animated skill progress bars
