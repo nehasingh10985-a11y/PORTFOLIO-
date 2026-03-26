@@ -56,17 +56,17 @@ npm run build
 
 All your personal content is in **`src/data.js`** — just edit that file:
 
-| What to change        | Where in data.js     |
-|-----------------------|----------------------|
-| Name, email, bio      | `META`               |
-| Typewriter titles     | `TITLES`             |
-| Hero stats            | `STATS`              |
-| Projects              | `PROJECTS`           |
-| Skill bars            | `FRONTEND_SKILLS`, `BACKEND_SKILLS` |
-| Tools grid            | `TOOLS`              |
-| Ticker items          | `TICKER`             |
-| Education             | `EDUCATION`          |
-| Work experience       | `EXPERIENCE`         |
+| What to change    | Where in data.js                    |
+| ----------------- | ----------------------------------- |
+| Name, email, bio  | `META`                              |
+| Typewriter titles | `TITLES`                            |
+| Hero stats        | `STATS`                             |
+| Projects          | `PROJECTS`                          |
+| Skill bars        | `FRONTEND_SKILLS`, `BACKEND_SKILLS` |
+| Tools grid        | `TOOLS`                             |
+| Ticker items      | `TICKER`                            |
+| Education         | `EDUCATION`                         |
+| Work experience   | `EXPERIENCE`                        |
 
 ---
 
@@ -80,7 +80,7 @@ npm i -g vercel
 vercel
 ```
 
-Or push to GitHub and import the repo at [vercel.com](https://vercel.com).
+Or push to GitHub and import the repo at [vercel.com](https://portfolio-tau-five-45.vercel.app).
 
 ---
 
