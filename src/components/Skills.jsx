@@ -24,7 +24,16 @@ export default function Skills() {
             <Reveal>
               <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:24 }}>
                 <p style={{ fontSize:11, color:"#334155", letterSpacing:"0.08em", textTransform:"uppercase" }}>Frontend</p>
-                <span style={{ fontSize:10, padding:"2px 9px", borderRadius:100, background:"rgba(99,102,241,0.1)", border:"1px solid rgba(99,102,241,0.2)", color:"#a5b4fc" }}>
+                <span style={{ 
+                  fontSize:10, 
+                  padding:"2px 9px", 
+                  borderRadius:100, 
+                  background:"rgba(99,102,241,0.1)", 
+                  border:"1px solid rgba(99,102,241,0.2)", 
+                  color:"#a5b4fc",
+                  boxShadow: "0 0 8px rgba(99,102,241,0.2)",
+                  transition: "all 0.3s ease",
+                }}>
                   Strong ✓
                 </span>
               </div>
@@ -35,7 +44,17 @@ export default function Skills() {
             <Reveal delay={100}>
               <div style={{ display:"flex", alignItems:"center", gap:10, margin:"36px 0 24px" }}>
                 <p style={{ fontSize:11, color:"#334155", letterSpacing:"0.08em", textTransform:"uppercase" }}>Backend</p>
-                <span style={{ fontSize:10, padding:"2px 9px", borderRadius:100, background:"rgba(245,158,11,0.08)", border:"1px solid rgba(245,158,11,0.2)", color:"#fbbf24" }}>
+                <span style={{ 
+                  fontSize:10, 
+                  padding:"2px 9px", 
+                  borderRadius:100, 
+                  background:"rgba(245,158,11,0.08)", 
+                  border:"1px solid rgba(245,158,11,0.2)", 
+                  color:"#fbbf24",
+                  boxShadow: "0 0 8px rgba(245,158,11,0.2)",
+                  transition: "all 0.3s ease",
+                  animation: "shimmer 2s infinite",
+                }}>
                   Learning →
                 </span>
               </div>
@@ -52,15 +71,36 @@ export default function Skills() {
             </Reveal>
             <Reveal delay={80}>
               <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(130px,1fr))", gap:8, marginBottom:28 }}>
-                {TOOLS.map(t => (
+                {TOOLS.map((t, idx) => (
                   <div key={t} style={{
-                    padding:"12px 14px", border:"1px solid rgba(255,255,255,0.04)",
-                    borderRadius:12, fontSize:13, color:"#4a5568",
-                    display:"flex", alignItems:"center", gap:10,
-                    transition:"all 0.2s", cursor:"default",
+                    padding:"12px 14px", 
+                    border:"1px solid rgba(255,255,255,0.04)",
+                    borderRadius:12, 
+                    fontSize:13, 
+                    color:"#4a5568",
+                    display:"flex", 
+                    alignItems:"center", 
+                    gap:10,
+                    transition:"all 0.3s ease", 
+                    cursor:"default",
+                    animation: "slideInLeft 0.5s ease-out forwards",
+                    animationDelay: `${idx * 0.05}s`,
+                    opacity: 0,
                   }}
-                    onMouseEnter={e => { e.currentTarget.style.borderColor="rgba(99,102,241,0.22)"; e.currentTarget.style.color="#94a3b8" }}
-                    onMouseLeave={e => { e.currentTarget.style.borderColor="rgba(255,255,255,0.04)"; e.currentTarget.style.color="#4a5568" }}>
+                    onMouseEnter={e => { 
+                      e.currentTarget.style.borderColor="rgba(99,102,241,0.22)"; 
+                      e.currentTarget.style.color="#94a3b8";
+                      e.currentTarget.style.background="rgba(99,102,241,0.05)";
+                      e.currentTarget.style.boxShadow="0 0 12px rgba(99,102,241,0.15)";
+                      e.currentTarget.style.transform="translateY(-2px)";
+                    }}
+                    onMouseLeave={e => { 
+                      e.currentTarget.style.borderColor="rgba(255,255,255,0.04)"; 
+                      e.currentTarget.style.color="#4a5568";
+                      e.currentTarget.style.background="transparent";
+                      e.currentTarget.style.boxShadow="none";
+                      e.currentTarget.style.transform="none";
+                    }}>
                     <div style={{ width:4, height:4, borderRadius:"50%", background:"#6366f1", flexShrink:0 }}/>
                     {t}
                   </div>
@@ -70,7 +110,24 @@ export default function Skills() {
 
             {/* Currently learning note */}
             <Reveal delay={160}>
-              <div style={{ padding:"18px 22px", borderRadius:14, border:"1px solid rgba(245,158,11,0.12)", background:"rgba(245,158,11,0.04)", marginBottom:28 }}>
+              <div style={{ 
+                padding:"18px 22px", 
+                borderRadius:14, 
+                border:"1px solid rgba(245,158,11,0.12)", 
+                background:"rgba(245,158,11,0.04)", 
+                marginBottom:28,
+                transition: "all 0.3s ease",
+              }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.borderColor="rgba(245,158,11,0.3)";
+                  e.currentTarget.style.background="rgba(245,158,11,0.08)";
+                  e.currentTarget.style.boxShadow="0 0 20px rgba(245,158,11,0.15)";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.borderColor="rgba(245,158,11,0.12)";
+                  e.currentTarget.style.background="rgba(245,158,11,0.04)";
+                  e.currentTarget.style.boxShadow="none";
+                }}>
                 <p style={{ fontSize:11, color:"#f59e0b", letterSpacing:"0.08em", textTransform:"uppercase", marginBottom:8 }}>Currently Learning</p>
                 <p style={{ fontSize:13, color:"#4a5568", lineHeight:1.8, fontWeight:300 }}>
                   Deepening <span style={{ color:"#fbbf24" }}>Node.js & Express.js</span>, advanced <span style={{ color:"#fbbf24" }}>MongoDB</span> patterns, and REST API architecture.
@@ -81,14 +138,38 @@ export default function Skills() {
             {/* Education */}
             <Reveal delay={200}>
               <p style={{ fontSize:11, color:"#334155", letterSpacing:"0.08em", textTransform:"uppercase", marginBottom:20 }}>Education</p>
-              {EDUCATION.map(e => (
-                <div key={e.deg} style={{ marginBottom:16, paddingBottom:16, borderBottom:"1px solid rgba(255,255,255,0.04)" }}>
+              {EDUCATION.map((e, idx) => (
+                <div key={e.deg} style={{ 
+                  marginBottom:16, 
+                  paddingBottom:16, 
+                  borderBottom:"1px solid rgba(255,255,255,0.04)",
+                  transition: "all 0.3s ease",
+                  animation: "slideInLeft 0.5s ease-out forwards",
+                  animationDelay: `${idx * 0.1}s`,
+                  opacity: 0,
+                }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.opacity="1";
+                    e.currentTarget.style.transform="translateX(4px)";
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.opacity="1";
+                    e.currentTarget.style.transform="none";
+                  }}>
                   <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", flexWrap:"wrap", gap:8 }}>
                     <div>
                       <p style={{ fontSize:14, fontWeight:500, color:"#94a3b8" }}>{e.deg} · {e.uni}</p>
                       <p style={{ fontSize:12, color:"#334155", marginTop:4 }}>{e.year}</p>
                     </div>
-                    <span style={{ fontSize:11, color:"#6366f1", padding:"3px 10px", border:"1px solid rgba(99,102,241,0.2)", borderRadius:100 }}>
+                    <span style={{ 
+                      fontSize:11, 
+                      color:"#6366f1", 
+                      padding:"3px 10px", 
+                      border:"1px solid rgba(99,102,241,0.2)", 
+                      borderRadius:100,
+                      transition: "all 0.2s ease",
+                      boxShadow: "0 0 8px rgba(99,102,241,0.15)",
+                    }}>
                       {e.score}
                     </span>
                   </div>
